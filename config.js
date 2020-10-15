@@ -1,0 +1,23 @@
+//import library mysql
+const mysql = require("mysql") 
+
+//inisialisasi database yang digunakan
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "moklet_rest_api"
+})
+
+//lakukan koneksi database
+db.connect(error => {
+    if (error) {
+        console.log(error.message)
+    } else {
+        console.log("SQL TERSAMBUNGKAN !")
+    }
+})
+
+//export konfigurasi database
+module.exports = db
+
